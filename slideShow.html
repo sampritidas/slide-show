@@ -1,0 +1,75 @@
+<html>
+
+<head>
+  <link rel="stylesheet" href="styles.css">
+  <style>
+    .z-index-1 {
+      z-index: 1;
+    }
+  </style>
+  <script>
+    addClass = (className, id) => {
+      const idClass = document.getElementById(id);
+      idClass.classList.add(className);
+    }
+
+    removeClass = (className, ids) => {
+      console.log(ids);
+      ids.forEach((tag) => {
+        const idClass = document.getElementById(tag);
+        idClass.classList.remove(className);
+      })
+    }
+
+    const firstImg = () => {
+      addClass('z-index-1', 'image-1');
+      removeClass('z-index-1', ['image-2', 'image-3', 'image-4']);
+    }
+    const secondImg = () => {
+      addClass('z-index-1', 'image-2');
+      removeClass('z-index-1', ['image-1', 'image-3', 'image-4']);
+    }
+    const thirdImg = () => {
+      addClass('z-index-1', 'image-3');
+      removeClass('z-index-1', ['image-1', 'image-2', 'image-4']);
+    }
+    const forthImg = () => {
+      addClass('z-index-1', 'image-4');
+      removeClass('z-index-1', ['image-2', 'image-3', 'image-1']);
+    }
+  </script>
+</head>
+
+<body>
+  <div class="slider-holder">
+    <div class="slider">
+      <div class="image-holder">
+        <div id="image-1" class="images">
+          <img src="image/image1.jpeg" />
+        </div>
+
+        <div id="image-2" class="images">
+          <img src="image/image2.jpeg" />
+        </div>
+        <div id="image-3" class="images">
+          <img src="image/image3.jpeg" />
+        </div>
+        <div id="image-4" class="images">
+          <img src="image/image4.jpeg" />
+        </div>
+      </div>
+    </div>
+    <div class="button-holder">
+      <a class="change-slider" onclick="firstImg()"></a>
+      <a class="change-slider" onclick="secondImg()"></a>
+      <a class="change-slider" onclick="thirdImg()"></a>
+      <a class="change-slider" onclick="forthImg()"></a>
+
+      <!-- <a href="#image-1" class="change-slider"></a>
+            <a href="#image-2" class="change-slider"></a>
+            <a href="#image-3" class="change-slider"></a> -->
+    </div>
+  </div>
+</body>
+
+</html>
